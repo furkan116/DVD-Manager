@@ -8,7 +8,7 @@
 
 
 #include <iostream>
-#include "movie.hpp"
+#include "Movie/Movie.hpp"
 
 void mainDisplay();
 
@@ -24,21 +24,33 @@ void mainDisplay() {
     std::cout << "*****DVD Store*****" << std::endl;
     std::cout << "-------------------" << std::endl;
     
-    int choice;
+    std::string choice;
+    Movies movie;
     
     std::cout << "Select one option blow" << std::endl;
     std::cout << std::setw(10) << "1-->" << "Movie" << std::endl;
     std::cout << std::setw(10) << "2-->" << "Music" << std::endl;
+    std::cout << std::setw(10) << "3-->" << "Game" << std::endl;
     std::cout << std::setw(10) << "0-->" << "Quit" << std::endl;
 
     std::cout << "Enter your choice: ";
     std::cin >> choice;
 
-    switch(choice) {
-        case 1: std::cout << "Success"; break;
-        case 2: std::cout << "Success"; break;
-        case 0: std::cout << "Success"; break;
-        default: std::cout << "Wrong choice!!" << std::endl;
+    if (choice == "1") {
+        movie.moviesMainDisplay();
+    }
+    else if (choice == "2") {
+        std::cout << "Success";
+    }
+    else if (choice == "3") {
+        std::cout << "Success";
+    }
+    else if (choice == "0") {
+        std::system("CLS");
+        std::cout << "Have a nice day";
+    }
+    else {
+        std::cout << "Wrong choice!!"; std::system("pause"); mainDisplay();
     }
 
 }
