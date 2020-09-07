@@ -13,7 +13,6 @@
 #include <iomanip>
 #include <string>
 #include <fstream>
-#include <curses.h>
 //#include <list>
 
 #include "movie.hpp"

@@ -11,14 +11,14 @@
 void mainFunctions::mainPause() {
     
     //Pause functions
-    std::cout << "\nPress any key to continue";
+    std::cout << "\nPress enter to continue";
     std::system("read");
     
 }
 
 //NOT WORKING
 void mainFunctions::mainClear() {
-    std::system("clear");
+    
 }
 
 void mainFunctions::mainDisplay() {
