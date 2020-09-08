@@ -40,6 +40,7 @@ void Movies::moviesMainDisplay() {
     std::cout << std::setw(10) << "1-->" << "Add Movie" << std::endl;
     std::cout << std::setw(10) << "2-->" << "Show All Movies" << std::endl;
     std::cout << std::setw(10) << "3-->" << "Search Movie" << std::endl;
+    std::cout << std::setw(10) << "4-->" << "Delete Movie" << std::endl;
     std::cout << std::setw(10) << "0-->" << "Main Menu" << std::endl;
 
     std::cout << "Enter your choice: ";
@@ -53,6 +54,9 @@ void Movies::moviesMainDisplay() {
     }
     else if (moviesMainChoice == "3") {
         searchMovie();
+    }
+    else if (moviesMainChoice == "4") {
+        deleteMovie();
     }
     else if (moviesMainChoice == "0") {
         mainF.mainDisplay();
@@ -158,4 +162,44 @@ void Movies::searchMovie() {
 
     moviesMainDisplay();
 
+}
+
+//NOT WORKING
+void Movies::deleteMovie() {
+    //Search and delete movie
+    
+    std::fstream movieRecord("movieRecord.txt", std::fstream::in |std::fstream::out | std::fstream::app);
+    std::fstream temp("temp.txt", std::fstream::in |std::fstream::out | std::fstream::app);
+
+
+    std::cout << "*****DVD Store*****" << std::endl;
+    std::cout << "-------------------" << std::endl;
+    std::cout << std::endl << "***Search Movies***"<< "\n\n" << std::endl;
+        
+    std::string searchName;
+    
+    std::cout << "Enter movie name for delete: ";
+    std::cin.ignore (std::numeric_limits<std::streamsize>::max(), '\n');
+    std::getline(std::cin, searchName);
+    std::cout << std::endl;
+    
+    
+    while (movieRecord >> movieName >> movieDirectorName >> movieGenre >> movieImdbScore >> movieYear) {
+        if (searchName == movieName) {
+            continue;
+        }
+        else {
+            movieRecord << std::setw(20) << movieName << std::setw(23) << movieDirectorName << std::setw(14) << movieGenre << std::setw(19) << movieImdbScore << std::setw(13) << movieYear << std::endl;
+        }
+    }
+    
+    temp.close();
+    movieRecord.close();
+    
+    std::remove("movieRecord.txt");
+    
+    std::rename("temp.txt", "movieRecord.txt");
+    mainF.mainPause();
+
+    moviesMainDisplay();
 }

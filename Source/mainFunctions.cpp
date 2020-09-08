@@ -19,6 +19,7 @@ void mainFunctions::mainPause() {
 //NOT WORKING
 void mainFunctions::mainClear() {
     
+    std::cout << "\f" << std::endl;
 }
 
 void mainFunctions::mainDisplay() {
