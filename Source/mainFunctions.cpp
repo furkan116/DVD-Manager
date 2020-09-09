@@ -30,11 +30,11 @@ void mainFunctions::mainDisplay() {
     
     std::string choice;
     Movies movie;
+    Music music;
     
     std::cout << "Select one option blow" << std::endl;
     std::cout << std::setw(10) << "1-->" << "Movie" << std::endl;
     std::cout << std::setw(10) << "2-->" << "Music" << std::endl;
-    std::cout << std::setw(10) << "3-->" << "Game" << std::endl;
     std::cout << std::setw(10) << "0-->" << "Quit" << std::endl;
 
     std::cout << "Enter your choice: ";
@@ -45,10 +45,9 @@ void mainFunctions::mainDisplay() {
         movie.moviesMainDisplay();
     }
     else if (choice == "2") {
-        std::cout << "Success";
-    }
-    else if (choice == "3") {
-        std::cout << "Success";
+        mainClear();
+        music.musicMainDisplay();
+        
     }
     else if (choice == "0") {
         std::cout << "Have a nice day";

@@ -16,6 +16,7 @@
 //#include <list>
 
 #include "movie.hpp"
+#include "music.hpp"
 
 class mainFunctions {
     

@@ -39,8 +39,8 @@ void Movies::moviesMainDisplay() {
     std::cout << "Select one option blow" << std::endl;
     std::cout << std::setw(10) << "1-->" << "Add Movie" << std::endl;
     std::cout << std::setw(10) << "2-->" << "Show All Movies" << std::endl;
-    std::cout << std::setw(10) << "3-->" << "Search Movie" << std::endl;
-    std::cout << std::setw(10) << "4-->" << "Delete Movie" << std::endl;
+    std::cout << std::setw(10) << "3-->" << "Search Movie(Only Windows)" << std::endl;
+    std::cout << std::setw(10) << "4-->" << "Delete Movie(Only Windows)" << std::endl;
     std::cout << std::setw(10) << "0-->" << "Main Menu" << std::endl;
 
     std::cout << "Enter your choice: ";
@@ -129,7 +129,7 @@ void Movies::showMovies() {
     moviesMainDisplay();
 }
 
-//NOT WORKING
+//Only Windows
 void Movies::searchMovie() {
     
     //Search movie
@@ -164,7 +164,7 @@ void Movies::searchMovie() {
 
 }
 
-//NOT WORKING
+//Only Windows
 void Movies::deleteMovie() {
     //Search and delete movie
     
@@ -189,7 +189,7 @@ void Movies::deleteMovie() {
             continue;
         }
         else {
-            movieRecord << std::setw(20) << movieName << std::setw(23) << movieDirectorName << std::setw(14) << movieGenre << std::setw(19) << movieImdbScore << std::setw(13) << movieYear << std::endl;
+            temp << std::setw(20) << movieName << std::setw(23) << movieDirectorName << std::setw(14) << movieGenre << std::setw(19) << movieImdbScore << std::setw(13) << movieYear << std::endl;
         }
     }
     
